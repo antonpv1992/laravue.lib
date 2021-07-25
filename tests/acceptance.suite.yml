@@ -1,0 +1,20 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver
+        - \Helper\Acceptance
+    config:
+        WebDriver:
+            url: 'http://localhost/'
+            window_size: false # disabled in ChromeDriver
+            port: 9515
+            browser: chrome
+            capabilities:
+             chromeOptions:
+                 args: ["--headless", "--disable-gpu"] # Run Chrome in headless mode
+                 prefs:
+                     download.default_directory: "..."
+extensions:
+    enabled:
+        - Codeception\Extension\RunProcess:
+            - chromedriver

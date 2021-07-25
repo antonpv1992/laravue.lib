@@ -1,0 +1,10 @@
+suite_namespace: tests\unit
+suite_class: UnitTester
+actor: UnitTester
+modules:
+    enabled:
+        - Laravel:
+            environment_file: .env.testing
+            part: ORM
+        - Asserts
+        - \Helper\Unit

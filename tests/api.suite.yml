@@ -1,0 +1,13 @@
+actor: ApiTester
+modules:
+    enabled:
+        - REST:
+            url: &url 'http://localhost:8000'
+            depends: 
+              - PhpBrowser
+              - Laravel
+    config:
+       PhpBrowser:
+           url: *url
+           headers:
+               Content-Type: application/json
